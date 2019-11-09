@@ -15,7 +15,7 @@ type User struct {
 
 func init() {
 	conf, _ := config.NewConfig("ini", ".env.ini")
-	dataSrouce := "root:" + conf.String("db:password") + "@tcp(127.0.0.1:3306)/hyperf?charset=utf8"
+	dataSrouce := "root:" + conf.String("db::password") + "@tcp(127.0.0.1:3306)/hyperf?charset=utf8"
 	// set default database
 	orm.RegisterDataBase("default", "mysql", dataSrouce, 30)
 
