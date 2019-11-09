@@ -12,13 +12,14 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use Hyperf\HttpServer\Contract\RequestInterface;
-use Hyperf\HttpServer\Contract\ResponseInterface;
+use App\Model\User;
 
 class OrmController extends Controller
 {
-    public function index(RequestInterface $request, ResponseInterface $response)
+    public function user(int $id)
     {
-        return $response->raw('Hello Hyperf!');
+        $model = User::query()->find($id);
+
+        return $this->response->success($model->toArray());
     }
 }
