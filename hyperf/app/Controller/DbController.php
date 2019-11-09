@@ -12,10 +12,21 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use Hyperf\DB\DB;
+use Hyperf\Di\Annotation\Inject;
+
 class DbController extends Controller
 {
+    /**
+     * @Inject
+     * @var DB
+     */
+    protected $db;
+
     public function user(int $id)
     {
-        return $id;
+        $res = $this->db->fetch('SELECT * FROM `user` WHERE id = ? LIMIT 1;', [$id]);
+
+        return $this->response->success($res);
     }
 }

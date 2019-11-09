@@ -13,4 +13,4 @@ declare(strict_types=1);
 use Hyperf\HttpServer\Router\Router;
 
 Router::addRoute(['GET', 'POST', 'HEAD'], '/', 'App\Controller\IndexController@index');
-Router::get('/db/user/{\d+}', 'App\Controller\DbController::user');
+Router::get('/db/user/{id:\d+}', 'App\Controller\DbController::user');
