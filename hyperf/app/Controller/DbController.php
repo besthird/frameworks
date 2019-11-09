@@ -10,7 +10,12 @@ declare(strict_types=1);
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
 
-use Hyperf\HttpServer\Router\Router;
+namespace App\Controller;
 
-Router::addRoute(['GET', 'POST', 'HEAD'], '/', 'App\Controller\IndexController@index');
-Router::get('/db/user/{\d+}', 'App\Controller\DbController::user');
+class DbController extends Controller
+{
+    public function user(int $id)
+    {
+        return $id;
+    }
+}
