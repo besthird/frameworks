@@ -16,7 +16,8 @@
     "ext-mbstring": "*",
     "swoft/view": "~2.0.0",
     "swoft/framework": "~2.0.0",
-    "swoft/http-server": "~2.0.0"
+    "swoft/http-server": "~2.0.0",
+    "swoft/db": "^2.0"
   },
   "require-dev": {
     "swoft/swoole-ide-helper": "dev-master",
